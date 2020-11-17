@@ -1,7 +1,7 @@
 package Vehicles;
 
 public interface Vehicle {
-    int driving(double distance);
-    int reFueling(double fuel);
+    double driving(double distance);
+    double reFueling(double fuel);
 
 }

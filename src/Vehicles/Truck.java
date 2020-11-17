@@ -3,27 +3,16 @@ package Vehicles;
 public class Truck implements Vehicle {
     //fuel quantity, fuel consumption in liters per km
     private double fuelQuantity;
-    private double fuelConsumption;
-    private double litersPerKM=1.6  ;
-    public Truck(int fuelConsumption,int fuelQuantity, int litersPerKM){
-        this.fuelConsumption=fuelConsumption;
+    private double litersPerKM;
+    public Truck(double fuelQuantity, double litersPerKM){
         this.fuelQuantity=fuelQuantity;
         this.litersPerKM=litersPerKM;
     }
-
-    public double getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    public void setFuelConsumption(int fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
-    }
-
     public double getFuelQuantity() {
         return fuelQuantity;
     }
 
-    public void setFuelQuantity(int fuelQuantity) {
+    public void setFuelQuantity(double fuelQuantity) {
         this.fuelQuantity = fuelQuantity;
     }
 
@@ -31,8 +20,8 @@ public class Truck implements Vehicle {
         return litersPerKM;
     }
 
-    public void setLitersPerKM(int litersPerKM) {
-        this.litersPerKM = litersPerKM;
+    public void setLitersPerKM(double litersPerKM) {
+        this.litersPerKM = litersPerKM*1.6;
     }
 
     @Override

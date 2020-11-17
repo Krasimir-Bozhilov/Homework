@@ -2,27 +2,17 @@ package Vehicles;
 
 public class Car implements Vehicle {
     private double fuelQuantity;
-    private double fuelConsumption;
-    private double litersPerKM=0.9;
-    public Car(int fuelConsumption,int fuelQuantity, int litersPerKM){
-        this.fuelConsumption=fuelConsumption;
+    private double litersPerKM;
+    public Car(double fuelQuantity, double litersPerKM){
         this.fuelQuantity=fuelQuantity;
         this.litersPerKM=litersPerKM;
-    }
-
-    public double getFuelConsumption() {
-        return fuelConsumption;
-    }
-
-    public void setFuelConsumption(int fuelConsumption) {
-        this.fuelConsumption = fuelConsumption;
     }
 
     public double getFuelQuantity() {
         return fuelQuantity;
     }
 
-    public void setFuelQuantity(int fuelQuantity) {
+    public void setFuelQuantity(double fuelQuantity) {
         this.fuelQuantity = fuelQuantity;
     }
 
@@ -30,17 +20,17 @@ public class Car implements Vehicle {
         return litersPerKM;
     }
 
-    public void setLitersPerKM(int litersPerKM) {
-        this.litersPerKM = litersPerKM;
+    public void setLitersPerKM(double litersPerKM) {
+        this.litersPerKM = litersPerKM*0.9;
     }
 
     @Override
-    public int driving(double distance) {
-        return 0;
+    public double driving(double distance) {
+
     }
 
     @Override
-    public int reFueling(double fuel) {
+    public double reFueling(double fuel) {
         return 0;
     }
 }
