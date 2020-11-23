@@ -50,7 +50,7 @@ public class Main {
             }
 
         }
-        System.out.println(car.getFuelQuantity());
+        System.out.printf("Car ",car.getFuelQuantity());
         System.out.println(truck.getFuelQuantity());
     }
 }
