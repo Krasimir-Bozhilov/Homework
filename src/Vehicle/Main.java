@@ -1,5 +1,8 @@
 package Vehicle;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Main {
@@ -14,6 +17,10 @@ public class Main {
         double truckLitersPerKM = Double.parseDouble(truckInfo[2]);
         Car car = new Car(carFuelQuantity, carLitersPerKM);
         Truck truck = new Truck(truckFuelQuantity, truckLitersPerKM);
+        NumberFormat format = DecimalFormat.getInstance();
+        format.setMinimumFractionDigits(0);
+
+
 
         for (int i = 0; i < n; i++) {
 
@@ -24,7 +31,8 @@ public class Main {
                     if (tokens[1].equals("Car")) {
                         boolean driven = car.drive(distance);
                         if (driven == true) {
-                            System.out.printf("Car travelled %.2f km\n ", distance);
+
+                            System.out.println("Car travelled "+format.format(distance)+ " km");
                         } else if (driven == false) {
                             System.out.println("Car needs refueling");
 
@@ -32,7 +40,8 @@ public class Main {
                     } else if (tokens[1].equals("Truck")) {
                         boolean driven = truck.drive(distance);
                         if (driven == true) {
-                            System.out.printf("Truck travelled %.2f km\n ", distance);
+
+                            System.out.println("Truck travelled "+format.format(distance)+ " km");
                         } else if (driven == false) {
                             System.out.println("Truck needs refueling");
                         }
@@ -50,7 +59,7 @@ public class Main {
             }
 
         }
-        System.out.printf("Car ",car.getFuelQuantity());
-        System.out.printf("Truck",truck.getFuelQuantity());
+        System.out.printf("Car: %.2f\n",car.getFuelQuantity());
+        System.out.printf("Truck: %.2f\n",truck.getFuelQuantity());
     }
 }

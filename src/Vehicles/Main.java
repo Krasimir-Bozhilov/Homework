@@ -33,6 +33,7 @@ public class Main {
 
         int n = Integer.parseInt(scanner.readLine());
 
+
         for (int i = 0; i < n; i++) {
             String[] info = scanner.readLine().split("\\s+");
 
